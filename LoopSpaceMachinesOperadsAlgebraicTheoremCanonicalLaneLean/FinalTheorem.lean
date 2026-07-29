@@ -1,0 +1,20 @@
+import canonicalLaneMathlib.AdmissibleClass
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.LoopSpaceMachine
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.OperadStructure
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.AlgebrasOverOperads
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.RepresentationTheorem
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.UniversalProperty
+import LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean.HomotopyInvariance
+
+namespace HautevilleHouse
+namespace LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean
+
+def ConstrainedLoopSpaceMachinesOperadsAlgebraicClosure (A : AdmissibleClass) : Prop :=
+  bridgeClosed A ∧ gateClosed A
+
+theorem constrained_loop_space_machines_operads_algebraic_endgame (A : AdmissibleClass) :
+  ConstrainedLoopSpaceMachinesOperadsAlgebraicClosure A := by
+  exact And.intro (bridge_from_admissible_class A) (gate_from_admissible_class A)
+
+end LoopSpaceMachinesOperadsAlgebraicTheoremCanonicalLaneLean
+end HautevilleHouse
